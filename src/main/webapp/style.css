@@ -1,0 +1,118 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26-Feb-2025, 2:29:36 pm
+    Author     : DISHITA
+*/
+
+/* General Styles */
+
+  /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Title */
+h1, h2, h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+form {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Table Styling (For Viewing Reservations) */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #007BFF;
+    color: white;
+}
+
+td {
+    background: #f9f9f9;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    padding: 20px;
+}
+
+.dashboard-container h2 {
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Logout Button */
+#logout {
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#logout:hover {
+    background: darkred;
+}

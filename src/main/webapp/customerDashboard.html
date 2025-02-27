@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Customer Dashboard</title>
+
+</head>
+<body>
+   
+        <h2>Welcome to your Dashboard</h2>
+        <form action="AddReservationServlet" method="post">
+            <h3>Make a Reservation</h3>
+            <input type="text" name="user_name" placeholder="User Name" required>
+            <input type="number" name="room_number" placeholder="Room Number" required>
+            <input type="date" name="check_in" required>
+            <input type="date" name="check_out" required>
+            <button type="submit">Book Now</button>
+        </form>
+        <form action="UpdateReservationServlet" method="post">
+            <h3>Update Your Reservation</h3>
+            <input type="number" name="id" placeholder="Reservation ID" required>
+            <input type="number" name="room_number" placeholder="New Room Number" required>
+            <input type="date" name="check_in" required>
+            <input type="date" name="check_out" required>
+            <button type="submit">Update</button>
+        </form>
+        <form action="DeleteReservationServlet" method="post">
+            <h3>Cancel Reservation</h3>
+            <input type="number" name="id" placeholder="Reservation ID" required>
+            <button type="submit">Cancel</button>
+             
+        </form>
+          <form action="ViewReservationServlet" method="get">
+              
+          <button type="submit">View My Reservations</button>
+    </form>
+        <form action="LogoutServlet" method="get">
+           
+       <button type="submit">Logout</button>
+
+        </form>
+         <script>
+        // Load reservations automatically on page load
+        window.onload = function() {
+            fetch('ViewReservationServlet')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('reservations').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading reservations:', error));
+        };
+    </script>
+            
+    
+</body>
+</html>

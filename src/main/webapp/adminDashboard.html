@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <title>Admin Dashboard</title>
+
+    </head>
+    <body> 
+
+        <h2>Admin Dashboard</h2>
+        <h3>Customer Reservations</h3>
+    
+    <table border="1" id="reservationTable">
+        <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Username</th>
+                <th>Guest name</th>
+                <th>Room Number</th>
+                <th>Contact Number</th>
+                <th>Check-in Date</th>
+                <th>Check-out Date</th>
+            </tr>
+        </thead>
+        <tbody id="reservationData">
+            <!-- Reservations will be loaded here dynamically -->
+        </tbody>
+    </table>
+        
+
+        <form action="AddReservationServlet" method="post">
+            <h3>Add Reservation</h3>
+            <input type="text" name="user_name" placeholder="Username" required>
+            <input type="text" name="guest_name" placeholder="Guestname" required>
+            <input type="number" name="room_number" placeholder="Room Number" required>
+            <input type="tel" name="contact_number" placeholder="Contact Number" required>
+            <input type="date" name="check_in" required>
+            <input type="date" name="check_out" required>
+            <button type="submit">Add Reservation</button>
+        </form>
+        <form action="UpdateReservationServlet" method="post">
+            <h3>Update Reservation</h3>
+            <input type="text" name="user_name" placeholder="Username" required>
+            <input type="text" name="guest_name" placeholder="Guestname" required>
+            <input type="number" name="id" placeholder="Reservation ID" required>
+            <input type="number" name="room_number" placeholder="New Room Number" required>
+            <input type="date" name="check_in" required>
+            <input type="date" name="check_out" required>
+            <button type="submit">Update</button>
+        </form>
+        <form action="DeleteReservationServlet" method="post">
+            <h3>Delete Reservation</h3>
+            <input type="number" name="id" placeholder="Reservation ID" required>
+            <button type="submit">Delete</button>
+        </form>
+         <form action="LogoutServlet" method="get">
+        <input type="submit" value="Logout" id="logout" class="button">
+    </form>
+        <a href="adminDashboard.html" class="button">Back to Dashboard</a>
+
+    <script>
+        // Load reservations automatically when the page loads
+        window.onload = function() {
+            fetch('ViewReservationServlet')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('reservationData').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading reservations:', error));
+        };
+    </script>
+
+         
+
+
+
+
+
+
+    </body>
+</html>
